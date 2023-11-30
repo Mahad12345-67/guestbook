@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gästbok</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 80px;
+        }
+        .guestbook-entry {
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Gästbok</h1>
+
+<!-- Formulär för att lämna kommentar -->
+<form action="process.php" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required>
+    <br>
+    <label for="homepage">Homepage:</label>
+    <input type="text" id="homepage" name="homepage">
+    <br>
+    <label for="tel">tel:</label>
+    <input type="text" id="tel" name="tel">
+    <br>
+    <label for="comment">Comment:</label>
+    <textarea id="comment" name="comment" required></textarea>
+    <br>
+    <input type="submit" value="Skicka kommentar">
+</form>
+
+<!-- Visa tidigare kommentarer -->
+<div class="guestbook">
+    <?php include 'display.php'; ?>
+</div>
+
+</body>
+</html>
